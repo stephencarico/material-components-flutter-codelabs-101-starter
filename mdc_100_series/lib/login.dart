@@ -44,11 +44,9 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
             const SizedBox(height: 120.0),
-            // TODO: Remove filled: true values (103)
             TextField(
               controller: _usernameController,
               decoration: const InputDecoration(
-                filled: true,
                 labelText: 'Username',
               ),
             ),
@@ -56,7 +54,6 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: _passwordController,
               decoration: const InputDecoration(
-                filled: true,
                 labelText: 'Password',
               ),
               obscureText: true,
@@ -66,12 +63,15 @@ class _LoginPageState extends State<LoginPage> {
                 // TODO: Add a beveled rectangular border to CANCEL (103)
                 children: <Widget>[
                   TextButton(
-                    child: Text('CANCEL'),
-                    onPressed: () {
-                      _usernameController.clear();
-                      _passwordController.clear();
-                    },
-                  ),
+                      child: Text('CANCEL'),
+                      onPressed: () {
+                        _usernameController.clear();
+                        _passwordController.clear();
+                      },
+                      style: TextButton.styleFrom(
+                        foregroundColor:
+                            Theme.of(context).colorScheme.secondary,
+                      )),
                   ElevatedButton(
                     child: Text('NEXT'),
                     onPressed: () {
