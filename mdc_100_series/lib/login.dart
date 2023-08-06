@@ -59,32 +59,31 @@ class _LoginPageState extends State<LoginPage> {
               ),
               obscureText: true,
             ),
-            OverflowBar(
-                alignment: MainAxisAlignment.end,
-                // TODO: Add a beveled rectangular border to CANCEL (103)
-                children: <Widget>[
-                  TextButton(
-                      child: Text('CANCEL'),
-                      onPressed: () {
-                        _usernameController.clear();
-                        _passwordController.clear();
-                      },
-                      style: TextButton.styleFrom(
-                        foregroundColor:
-                            Theme.of(context).colorScheme.secondary,
-                      )),
-                  ElevatedButton(
-                    child: Text('NEXT'),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    style: TextButton.styleFrom(
-                      foregroundColor: kShrineBrown900,
-                      backgroundColor: kShrinePink100,
-                      elevation: 8.0,
-                    ),
+            OverflowBar(alignment: MainAxisAlignment.end, children: <Widget>[
+              TextButton(
+                  child: Text('CANCEL'),
+                  onPressed: () {
+                    _usernameController.clear();
+                    _passwordController.clear();
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Theme.of(context).colorScheme.secondary,
+                  )),
+              ElevatedButton(
+                child: Text('NEXT'),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: TextButton.styleFrom(
+                  foregroundColor: kShrineBrown900,
+                  backgroundColor: kShrinePink100,
+                  elevation: 8.0,
+                  shape: const BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
                   ),
-                ]),
+                ),
+              ),
+            ]),
           ],
         ),
       ),
