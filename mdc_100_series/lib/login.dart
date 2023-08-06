@@ -13,7 +13,8 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
-import 'package:shrine/colors.dart';
+
+import 'colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -59,31 +60,39 @@ class _LoginPageState extends State<LoginPage> {
               ),
               obscureText: true,
             ),
-            OverflowBar(alignment: MainAxisAlignment.end, children: <Widget>[
-              TextButton(
-                  child: Text('CANCEL'),
+            const SizedBox(height: 12.0),
+            OverflowBar(
+              alignment: MainAxisAlignment.end,
+              children: <Widget>[
+                TextButton(
+                  child: const Text('CANCEL'),
                   onPressed: () {
                     _usernameController.clear();
                     _passwordController.clear();
                   },
                   style: TextButton.styleFrom(
-                    foregroundColor: Theme.of(context).colorScheme.secondary,
-                  )),
-              ElevatedButton(
-                child: Text('NEXT'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                style: TextButton.styleFrom(
-                  foregroundColor: kShrineBrown900,
-                  backgroundColor: kShrinePink100,
-                  elevation: 8.0,
-                  shape: const BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    foregroundColor: kShrineBrown900,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
                   ),
                 ),
-              ),
-            ]),
+                ElevatedButton(
+                  child: const Text('NEXT'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: kShrineBrown900,
+                    backgroundColor: kShrinePink100,
+                    elevation: 8.0,
+                    shape: const BeveledRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(7.0)),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
