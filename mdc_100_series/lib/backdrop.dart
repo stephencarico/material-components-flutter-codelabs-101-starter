@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'model/product.dart';
 
-// TODO: Add velocity constant (104)
 const double _kFlingVelocity = 2.0;
 
 class Backdrop extends StatefulWidget {
@@ -29,7 +28,6 @@ class _BackdropState extends State<Backdrop>
     with SingleTickerProviderStateMixin {
   final GlobalKey _backdropKey = GlobalKey(debugLabel: 'Backdrop');
 
-  // TODO: Add AnimationController widget (104)
   late AnimationController _controller;
 
   @override
@@ -84,12 +82,10 @@ class _BackdropState extends State<Backdrop>
     return Stack(
       key: _backdropKey,
       children: <Widget>[
-        // TODO: Wrap backLayer in an ExcludeSemantics widget (104)
         ExcludeSemantics(
           child: widget.backLayer,
           excluding: _frontLayerVisible,
         ),
-        // TODO: Add a PositionedTransition (104)
         PositionedTransition(
           rect: layerAnimation,
           child: _FrontLayer(
